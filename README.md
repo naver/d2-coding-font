@@ -4,7 +4,7 @@
 ![D2 Coding, a monospaced typeface for developers, from NAVER](site/og.png)
 
 ### Download
-   - [Ver 1.3.3 (released 2026-07-25)](https://github.com/naver/d2-coding-font/releases/tag/VER1.3.3)
+   - [Ver 1.3.4 (released 2026-10-02)](https://github.com/naver/d2-coding-font/releases/tag/VER1.3.4)
    - Please uninstall any previously installed version before installing.
    - Older versions are available on the [Releases](https://github.com/naver/d2-coding-font/releases) page,
      and the version history is in [CHANGELOG.md](CHANGELOG.md).
@@ -74,7 +74,7 @@ The grid above is the one the [specimen page](https://naver.github.io/d2-coding-
 draw over any sample.
 
 ### Character coverage
-1.3.3 maps 19,966 codepoints over 26,188 glyphs: all 11,172 Hangul syllables, Latin and 332
+1.3.4 maps 19,966 codepoints over 26,189 glyphs: all 11,172 Hangul syllables, Latin and 332
 extended characters, 31 control pictures, and 4,620 CJK Unified Ideographs plus 268 compatibility
 ideographs.
 

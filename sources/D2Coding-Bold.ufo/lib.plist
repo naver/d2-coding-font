@@ -26170,9 +26170,10 @@
       <string>uni9F90</string>
       <string>uni9F95</string>
       <string>uni9F9C</string>
+      <string>uni301C</string>
     </array>
     <key>public.openTypeHeadModified</key>
-    <string>2026/07/24 20:54:42</string>
+    <string>2026/10/02 14:54:58</string>
     <key>public.openTypePostUnderlinePosition</key>
     <integer>-136</integer>
     <key>public.truetype.instructions</key>

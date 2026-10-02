@@ -2,7 +2,6 @@
 <glyph name="similar" format="2">
   <advance width="500"/>
   <unicode hex="223C"/>
-  <unicode hex="301C"/>
   <outline>
     <contour>
       <point x="464" y="359" type="qcurve"/>

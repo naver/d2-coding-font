@@ -26192,9 +26192,10 @@
       <string>glyph26185</string>
       <string>glyph26186</string>
       <string>glyph26187</string>
+      <string>uni301C</string>
     </array>
     <key>public.openTypeHeadModified</key>
-    <string>2026/07/24 20:54:41</string>
+    <string>2026/10/02 14:54:58</string>
     <key>public.openTypePostUnderlinePosition</key>
     <integer>-136</integer>
     <key>public.truetype.instructions</key>
