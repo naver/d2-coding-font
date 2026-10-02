@@ -84,7 +84,7 @@
       "| 글꼴 이름  | D2Coding  | 나눔바른고딕 기반           |",
       "| 굵기       | 400 / 700 | Regular, Bold               |",
       "| 라이센스   | OFL 1.1   | 상용 프로그램 포함 재배포   |",
-      "| 리거처     | calt      | 별도 빌드로 제공            |",
+      "| 리거처     | calt/liga | 별도 빌드로 제공            |",
       "",
       "def 검증(문자열: str) -> bool:",
       "    return len(문자열.encode(\"utf-8\")) > 0  # 인코딩 확인"
@@ -181,7 +181,7 @@
     root.style.setProperty("--type-tracking", s.tracking + "em");
     root.style.setProperty("--type-weight", String(s.weight));
     root.style.setProperty("--type-liga", s.calt ? "contextual" : "none");
-    root.style.setProperty("--type-features", s.calt ? '"calt" 1' : '"calt" 0');
+    root.style.setProperty("--type-features", s.calt ? '"calt" 1, "liga" 1' : '"calt" 0, "liga" 0');
     root.style.setProperty("--type-smoothing", s.antialias ? "antialiased" : "auto");
     root.style.setProperty("--cell", (s.size * 0.5 + s.size * s.tracking) + "px");
     document.body.classList.toggle("is-grid", s.grid);
@@ -363,7 +363,7 @@
       "| | |",
       "| --- | --- |",
       "| Font | D2Coding 1.3.4 (ligature build, WOFF2) |",
-      "| Build shown | " + (s.calt ? "ligature (`calt` on)" : "standard (`calt` off)") + " |",
+      "| Build shown | " + (s.calt ? "ligature (`calt` and `liga` on)" : "standard (`calt` and `liga` off)") + " |",
       "| Weight | " + (s.weight === 700 ? "Bold (700)" : "Regular (400)") + " |",
       "| Size | " + s.size + "px |",
       "| Line height | " + s.leading.toFixed(2) + " |",

@@ -72,7 +72,7 @@
     </dl>
     <p class="hero-note">
       Everything on this page is rendered with the actual 1.3.4 ligature binaries, served as WOFF2.
-      The standard build is the same font with <code>calt</code> switched off, so the ligature
+      The standard build is the same font with <code>calt</code> and <code>liga</code> switched off, so the ligature
       toggle below shows you exactly what each build looks like. Install commands for Windows,
       macOS and Linux are in the
       <a href="https://github.com/naver/d2-coding-font#try-it-first">README</a>.
@@ -130,17 +130,19 @@
   <div class="section-head">
     <h2>Ligatures</h2>
     <p>
-      The ligature build rewrites operator sequences through the OpenType <code>calt</code> feature.
+      The ligature build rewrites operator sequences through the OpenType <code>calt</code> and <code>liga</code> features.
       Every sequence below was verified against the shipped binary, not copied from a list. The raw
       characters are printed under each one.
     </p>
   </div>
   <pre class="specimen" id="lig-mixed-demo"></pre>
   <p class="note">
-    <code>calt</code> is registered under <code>DFLT</code>, <code>latn</code>, <code>cyrl</code>,
-    <code>grek</code>, <code>zinh</code> and <code>zyyy</code>. There is no <code>hang</code>
-    record, but operators sit in their own run, so ligatures still fire on a line that also
-    contains Korean.
+    Both features carry the same lookups and are registered under <code>DFLT</code>,
+    <code>latn</code>, <code>cyrl</code>, <code>grek</code>, <code>zinh</code> and
+    <code>zyyy</code>. Chrome gives operators their own run, so <code>calt</code> alone is
+    enough there. Some text engines shape a line of Korean as one Hangul run, and the Hangul
+    shaper in HarfBuzz, like Uniscribe, switches <code>calt</code> off but keeps
+    <code>liga</code>.
   </p>
 
   <div class="lig-groups" id="lig-groups"></div>

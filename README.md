@@ -87,8 +87,9 @@ string literals keep source code, tables and box drawing output aligned. Hanja i
 
 ### Ligature build
 A separate ligature build adds programming ligatures for common operator sequences such as `=>`,
-`!=`, `<=` and `->` through the OpenType `calt` feature. Apart from that OpenType code it is
-identical to the standard build: the two share the exact same outlines and metrics.
+`!=`, `<=` and `->`. The same lookups are registered under both the `calt` and `liga` OpenType
+features, so turning ligatures off in an editor means switching off both. Apart from that OpenType
+code it is identical to the standard build: the two share the exact same outlines and metrics.
 
 ## Sources
 The original design sources have never been part of this repository. The typeface was drawn for

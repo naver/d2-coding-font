@@ -48,6 +48,6 @@ python tools/build-data.py /path/to/d2-coding-font/fonts/ttf
 ```
 
 Both web fonts come from the **ligature** build. The standard build is the same font with `calt`
-switched off, so the ligature toggle on the page shows both builds from one pair of files. Nothing
+and `liga` switched off, so the ligature toggle on the page shows both builds from one pair of files. Nothing
 in `data.js` is written by hand: the ligature list is discovered from the `GSUB` chaining
 contextual rules and then verified with HarfBuzz, and the coverage ranges come from the `cmap`.

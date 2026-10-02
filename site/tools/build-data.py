@@ -5,7 +5,7 @@
     python tools/build-data.py ../fonts/ttf
 
 The page uses the ligature build for both states: the standard build is the same
-font with `calt` switched off, so one pair of WOFF2 files covers everything.
+font with `calt` and `liga` switched off, so one pair of WOFF2 files covers everything.
 """
 import itertools
 import json

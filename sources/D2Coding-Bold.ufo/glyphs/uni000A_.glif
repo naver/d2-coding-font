@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uni000A" format="2">
   <advance width="500"/>
-  <unicode hex="000A"/>
   <outline>
     <contour>
       <point x="235" y="518" type="qcurve"/>

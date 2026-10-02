@@ -317,7 +317,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   letter-spacing: var(--type-tracking, 0);
   font-weight: var(--type-weight, 400);
   font-variant-ligatures: var(--type-liga, contextual);
-  font-feature-settings: var(--type-features, "calt" 1);
+  font-feature-settings: var(--type-features, "calt" 1, "liga" 1);
   -webkit-font-smoothing: var(--type-smoothing, antialiased);
 }
 
@@ -388,7 +388,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   font-size: 1.5rem;
   line-height: 1.3;
   font-variant-ligatures: contextual;
-  font-feature-settings: "calt" 1;
+  font-feature-settings: "calt" 1, "liga" 1;
 }
 .lig span {
   display: block;
@@ -396,7 +396,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   font-size: .72rem;
   color: var(--muted);
   font-variant-ligatures: none;
-  font-feature-settings: "calt" 0;
+  font-feature-settings: "calt" 0, "liga" 0;
   white-space: pre;
 }
 
@@ -570,7 +570,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   font-family: var(--mono);
   font-weight: var(--type-weight, 400);
   font-variant-ligatures: var(--type-liga, contextual);
-  font-feature-settings: var(--type-features, "calt" 1);
+  font-feature-settings: var(--type-features, "calt" 1, "liga" 1);
   -webkit-font-smoothing: var(--type-smoothing, antialiased);
 }
 
