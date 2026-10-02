@@ -32,7 +32,7 @@
 
   var SAMPLES = {
     js: [
-      "// D2Coding 1.3.4 - github.com/naver/d2-coding-font",
+      "// D2Coding 1.3.5 - github.com/naver/d2-coding-font",
       "const OPERATORS = ['!=', '===', '=>', '->', '<=', '|>', '::', '<$>'];",
       "",
       "export function align(rows, width = 12) {",
@@ -362,7 +362,7 @@
       "",
       "| | |",
       "| --- | --- |",
-      "| Font | D2Coding 1.3.4 (ligature build, WOFF2) |",
+      "| Font | D2Coding 1.3.5 (ligature build, WOFF2) |",
       "| Build shown | " + (s.calt ? "ligature (`calt` and `liga` on)" : "standard (`calt` and `liga` off)") + " |",
       "| Weight | " + (s.weight === 700 ? "Bold (700)" : "Regular (400)") + " |",
       "| Size | " + s.size + "px |",

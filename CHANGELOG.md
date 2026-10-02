@@ -5,14 +5,14 @@ The archive for every version is attached to its tag on the
 predate this repository; their archives were re-uploaded when the project moved from
 dev.naver.com to GitHub, and their dates below come from the archive names.
 
-## Unreleased
+## 1.3.5 (2026-10-03)
 
 - The control characters U+0001 to U+001F, except the carriage return U+000D, are no
   longer mapped. They pointed at DOS style control pictures, and text engines that
   look them up drew them: Keynote showed the line feed as a boxed circle at the end of
   each paragraph ([#93](https://github.com/naver/d2-coding-font/issues/93)). The
   pictures are still in the font but nothing maps to them. Tab is no longer mapped
-  either; the space U+0020 keeps its glyph.
+  either; the space U+0020 keeps its glyph. No outline, width or hinting changed.
 - The coding ligatures are registered under `liga` as well as `calt`, with the same
   lookups ([#73](https://github.com/naver/d2-coding-font/issues/73)). The Hangul
   shaper in HarfBuzz, like Uniscribe, switches `calt` off, so a line of Korean that was
