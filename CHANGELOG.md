@@ -5,6 +5,20 @@ The archive for every version is attached to its tag on the
 predate this repository; their archives were re-uploaded when the project moved from
 dev.naver.com to GitHub, and their dates below come from the archive names.
 
+## Unreleased
+
+- The ligatures for `.=`, `.-`, `{.` and `.}` are removed
+  ([#97](https://github.com/naver/d2-coding-font/issues/97)). They raised the period to
+  the height of a centered dot, which misrepresented code where the period has a meaning
+  of its own: the decimal point in `1.-x`, the `{{.}}` of Go templates, Nim pragmas such
+  as `{.inline.}` and CSS selectors such as `.-mt-2`. These sequences now show a plain
+  period. `..`, `...`, `..<` and the other ligatures are unchanged.
+- In Regular, `i`, `і` (U+0456) and `ѝ` (U+045D) were drawn one pixel above the baseline
+  at 18 ppem with FreeType hinting
+  ([#107](https://github.com/naver/d2-coding-font/issues/107),
+  [#108](https://github.com/naver/d2-coding-font/pull/108)). Their hinting now has the
+  18 ppem correction that 19 and 20 ppem already had.
+
 ## 1.3.5 (2026-10-03)
 
 - The control characters U+0001 to U+001F, except the carriage return U+000D, are no
