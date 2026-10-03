@@ -88,9 +88,12 @@ DELTAP1[ ]	/* DeltaExceptionP1 */
 NPUSHW[ ]	/* 3 values pushed */
 128 47 1
 DELTAP1[ ]	/* DeltaExceptionP1 */
-NPUSHW[ ]	/* 5 values pushed */
-160 47 176 47 2
+NPUSHW[ ]	/* 7 values pushed */
+144 47 160 47 176 47 3
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 5 values pushed */
+48 47 64 47 2
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 2 values pushed */
 19 1
 MIRP[10100]	/* MoveIndirectRelPt */

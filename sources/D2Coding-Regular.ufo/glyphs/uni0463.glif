@@ -64,6 +64,9 @@ PUSHW[ ]	/* 1 value pushed */
 29
 MDAP[1]	/* MoveDirectAbsPt */
 NPUSHW[ ]	/* 5 values pushed */
+160 29 176 29 2
+DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 5 values pushed */
 207 4 223 4 2
 DELTAP1[ ]	/* DeltaExceptionP1 */
 NPUSHW[ ]	/* 3 values pushed */

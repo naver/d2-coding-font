@@ -72,9 +72,12 @@ MIRP[10100]	/* MoveIndirectRelPt */
 NPUSHW[ ]	/* 5 values pushed */
 112 24 128 24 2
 DELTAP1[ ]	/* DeltaExceptionP1 */
-NPUSHW[ ]	/* 5 values pushed */
-160 24 176 24 2
+NPUSHW[ ]	/* 7 values pushed */
+144 24 160 24 176 24 3
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 7 values pushed */
+32 24 48 24 64 24 3
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 1 value pushed */
 24
 SRP0[ ]	/* SetRefPoint0 */

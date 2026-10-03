@@ -66,18 +66,24 @@ SRP0[ ]	/* SetRefPoint0 */
 PUSHW[ ]	/* 2 values pushed */
 5 1
 MIRP[10100]	/* MoveIndirectRelPt */
-NPUSHW[ ]	/* 15 values pushed */
-80 8 96 8 112 8 128 8 144 8 160 8 176 8 7
+NPUSHW[ ]	/* 19 values pushed */
+80 8 96 8 112 8 128 8 144 8 160 8 176 8 224 8 240 8 9
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 11 values pushed */
+0 8 16 8 32 8 48 8 64 8 5
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 1 value pushed */
 8
 SRP0[ ]	/* SetRefPoint0 */
 PUSHW[ ]	/* 2 values pushed */
 9 1
 MIRP[10100]	/* MoveIndirectRelPt */
-NPUSHW[ ]	/* 15 values pushed */
-80 11 96 11 112 11 128 11 144 11 160 11 176 11 7
+NPUSHW[ ]	/* 19 values pushed */
+80 11 96 11 112 11 128 11 144 11 160 11 176 11 224 11 240 11 9
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 11 values pushed */
+0 11 16 11 32 11 48 11 64 11 5
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 1 value pushed */
 11
 SRP0[ ]	/* SetRefPoint0 */

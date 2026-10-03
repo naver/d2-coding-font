@@ -60,9 +60,12 @@ MDRP[10000]	/* MoveDirectRelPt */
 NPUSHW[ ]	/* 3 values pushed */
 128 5 1
 DELTAP1[ ]	/* DeltaExceptionP1 */
-NPUSHW[ ]	/* 5 values pushed */
-160 5 176 5 2
+NPUSHW[ ]	/* 7 values pushed */
+144 5 160 5 176 5 3
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 5 values pushed */
+48 5 64 5 2
+DELTAP2[ ]	/* DeltaExceptionP2 */
 NPUSHW[ ]	/* 3 values pushed */
 127 12 1
 DELTAP1[ ]	/* DeltaExceptionP1 */

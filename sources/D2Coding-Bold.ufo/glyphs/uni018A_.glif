@@ -88,9 +88,12 @@ DELTAP1[ ]	/* DeltaExceptionP1 */
 NPUSHW[ ]	/* 3 values pushed */
 110 13 1
 DELTAP1[ ]	/* DeltaExceptionP1 */
-NPUSHW[ ]	/* 15 values pushed */
-80 26 96 26 112 26 128 26 144 26 160 26 176 26 7
+NPUSHW[ ]	/* 17 values pushed */
+80 26 96 26 112 26 128 26 144 26 160 26 176 26 240 26 8
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 11 values pushed */
+0 26 16 26 32 26 48 26 64 26 5
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 1 value pushed */
 26
 SRP0[ ]	/* SetRefPoint0 */

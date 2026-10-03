@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Check and illustrate the known 18 ppem baseline regression."""
+"""Check that baseline glyphs reach the baseline with FreeType hinting.
+
+Usage:
+    uv run --with freetype-py python tools/check_hinting.py fonts/ttf/*.ttf
+
+Renders every glyph from U+0020 to U+052F whose outline bottom is between 0 and 40 units
+at 9 to 29 ppem, and fails if a bitmap ends above the baseline. Above 29 ppem the serif
+bottoms at 16 units round to one pixel even in plain Latin, so those sizes are not checked.
+`--specimen out.png` on a single font draws i, U+0456 and U+045D at 16 to 20 ppem; it also
+needs Pillow 10.1 or later.
+"""
 
 import argparse
 import hashlib
@@ -10,6 +20,10 @@ from pathlib import Path
 import freetype
 
 PPEMS = tuple(range(16, 21))
+BASELINE_PPEMS = tuple(range(9, 30))
+BASELINE_RANGE = range(0x0020, 0x0530)
+# Punctuation and symbols that may sit above the baseline by design.
+BASELINE_SKIP = {0x0023, 0x0025, 0x002E, 0x003A, 0x00A4, 0x00B1}
 GLYPHS = (
     (0x0069, "LATIN SMALL LETTER I"),
     (0x0456, "CYRILLIC SMALL LETTER BYELORUSSIAN-UKRAINIAN I"),
@@ -61,6 +75,27 @@ def measure(path: Path) -> dict[int, tuple[Raster, ...]]:
     }
 
 
+def floating(path: Path) -> dict[int, tuple[int, ...]]:
+    """Codepoints of baseline glyphs that end above the baseline, with the sizes."""
+    face = freetype.Face(str(path))
+    result = {}
+    for codepoint, index in face.get_chars():
+        if codepoint not in BASELINE_RANGE or codepoint in BASELINE_SKIP:
+            continue
+        face.load_glyph(index, freetype.FT_LOAD_NO_SCALE)
+        if face.glyph.outline.n_points == 0 or not 0 <= face.glyph.outline.get_bbox().yMin <= 40:
+            continue
+        sizes = []
+        for ppem in BASELINE_PPEMS:
+            face.set_pixel_sizes(0, ppem)
+            face.load_glyph(index, freetype.FT_LOAD_DEFAULT | freetype.FT_LOAD_RENDER)
+            if face.glyph.bitmap_top - face.glyph.bitmap.rows > 0:
+                sizes.append(ppem)
+        if sizes:
+            result[codepoint] = tuple(sizes)
+    return result
+
+
 def check(path: Path, measurements: dict[int, tuple[Raster, ...]]) -> bool:
     failed = False
     print(path)
@@ -68,7 +103,12 @@ def check(path: Path, measurements: dict[int, tuple[Raster, ...]]) -> bool:
         bottoms = tuple(raster.bottom for raster in measurements[codepoint])
         print(f"  U+{codepoint:04X}: bottom={bottoms}")
         failed |= any(bottom != 0 for bottom in bottoms)
-    return not failed
+    off = floating(path)
+    for codepoint, sizes in off.items():
+        print(f"  U+{codepoint:04X} {chr(codepoint)} above the baseline at {sizes} ppem")
+    if not off:
+        print(f"  all baseline glyphs reach the baseline at {BASELINE_PPEMS[0]} to {BASELINE_PPEMS[-1]} ppem")
+    return not failed and not off
 
 
 def specimen(

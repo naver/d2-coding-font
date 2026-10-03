@@ -18,6 +18,18 @@ dev.naver.com to GitHub, and their dates below come from the archive names.
   ([#107](https://github.com/naver/d2-coding-font/issues/107),
   [#108](https://github.com/naver/d2-coding-font/pull/108)). Their hinting now has the
   18 ppem correction that 19 and 20 ppem already had.
+- With FreeType hinting, 27 Regular and 87 Bold glyphs were drawn one pixel above the
+  baseline at some sizes between 9 and 29 ppem, while `n`, `o` and `E` sat on it
+  ([#109](https://github.com/naver/d2-coding-font/issues/109),
+  [#110](https://github.com/naver/d2-coding-font/issues/110),
+  [#111](https://github.com/naver/d2-coding-font/issues/111),
+  [#112](https://github.com/naver/d2-coding-font/issues/112)). Among them are `ї`, `ѝ`,
+  `ε`, `Ω`, `З` and `Э` in Regular, and in Bold the dotless `ı` with `ì í î ï`, `ł`,
+  `Đ`, the `U` and `t` families and most Greek and Cyrillic letters at 18 ppem. Their
+  hinting now has a -1 px correction at those sizes, so the composite glyphs built on them
+  follow. No outline changed, and every other size renders as before.
+  `tools/check_hinting.py` now checks all baseline glyphs from U+0020 to U+052F at 9 to
+  29 ppem.
 
 ## 1.3.5 (2026-10-03)
 

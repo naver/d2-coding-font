@@ -64,9 +64,12 @@ MDAP[1]	/* MoveDirectAbsPt */
 PUSHW[ ]	/* 1 value pushed */
 0
 MDAP[1]	/* MoveDirectAbsPt */
-NPUSHW[ ]	/* 5 values pushed */
-160 0 176 0 2
+NPUSHW[ ]	/* 9 values pushed */
+128 0 144 0 160 0 176 0 4
 DELTAP1[ ]	/* DeltaExceptionP1 */
+NPUSHW[ ]	/* 5 values pushed */
+48 0 64 0 2
+DELTAP2[ ]	/* DeltaExceptionP2 */
 PUSHW[ ]	/* 1 value pushed */
 11
 SRP0[ ]	/* SetRefPoint0 */
