@@ -90,6 +90,22 @@ A separate ligature build adds programming ligatures for common operator sequenc
 features, so turning ligatures off in an editor means switching off both. Apart from that OpenType
 code it is identical to the standard build: the two share the exact same outlines and metrics.
 
+### Dotted zero
+The default zero has a slash inside its counter. Both builds also carry a dotted zero, which
+replaces it when the `cv01` OpenType feature is on. The same substitution is registered as `ss01`
+for applications that only list stylistic sets. It is off by default, and only the zero changes.
+
+| Application | Setting |
+| --- | --- |
+| VS Code | `"editor.fontLigatures": "'cv01'"`, or `"'calt' off, 'liga' off, 'cv01'"` without ligatures |
+| Windows Terminal | `"font": { "face": "D2Coding", "features": { "cv01": 1 } }` |
+| WezTerm | `config.harfbuzz_features = { "cv01" }` |
+| kitty | `font_features D2Coding +cv01`, and the same line for `D2CodingBold` |
+| Ghostty | `font-feature = cv01` |
+
+The [specimen page](https://naver.github.io/d2-coding-font/) has a Dotted zero toggle to compare
+the two.
+
 ## Sources
 The original design sources have never been part of this repository. The typeface was drawn for
 NAVER by FONTRIX in 2015, and on a project this old, tracking down who still holds the `.glyphs` or

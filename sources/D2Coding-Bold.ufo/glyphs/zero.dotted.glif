@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zero.dotted" format="2">
+  <advance width="500"/>
+  <outline>
+    <contour>
+      <point x="250" y="705" type="qcurve"/>
+      <point x="353" y="705"/>
+      <point x="463" y="533"/>
+      <point x="463" y="350" type="qcurve"/>
+      <point x="463" y="257"/>
+      <point x="435" y="126"/>
+      <point x="380" y="42"/>
+      <point x="301" y="3"/>
+      <point x="250" y="3" type="qcurve"/>
+      <point x="197" y="3"/>
+      <point x="118" y="42"/>
+      <point x="64" y="126"/>
+      <point x="37" y="257"/>
+      <point x="37" y="350" type="qcurve"/>
+      <point x="37" y="533"/>
+      <point x="145" y="705"/>
+    </contour>
+    <contour>
+      <point x="250" y="88" type="qcurve"/>
+      <point x="302" y="88"/>
+      <point x="358" y="223"/>
+      <point x="358" y="352" type="qcurve"/>
+      <point x="358" y="482"/>
+      <point x="302" y="617"/>
+      <point x="250" y="617" type="qcurve"/>
+      <point x="197" y="617"/>
+      <point x="141" y="482"/>
+      <point x="141" y="352" type="qcurve"/>
+      <point x="141" y="223"/>
+      <point x="197" y="88"/>
+    </contour>
+    <contour>
+      <point x="250" y="250" type="qcurve"/>
+      <point x="224" y="250"/>
+      <point x="197" y="302"/>
+      <point x="197" y="352" type="qcurve"/>
+      <point x="197" y="403"/>
+      <point x="224" y="455"/>
+      <point x="250" y="455" type="qcurve"/>
+      <point x="275" y="455"/>
+      <point x="302" y="403"/>
+      <point x="302" y="352" type="qcurve"/>
+      <point x="302" y="302"/>
+      <point x="275" y="250"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.instructions</key>
+      <dict>
+        <key>assembly</key>
+        <string>
+SVTCA[0]
+PUSHW[] 0
+MDAP[1]
+PUSHW[] 16
+MDAP[1]
+PUSHW[] 64 16 1
+DELTAP2[]
+NPUSHW[] 128 16 144 16 160 16 176 16 4
+DELTAP1[]
+PUSHW[] 16
+SRP0[]
+PUSHW[] 8 1
+MIRP[10100]
+PUSHW[] 0
+SRP0[]
+PUSHW[] 22 1
+MIRP[10100]
+PUSHW[] 8
+SRP1[]
+PUSHW[] 0
+SRP2[]
+PUSHW[] 28
+IP[]
+PUSHW[] 28
+MDAP[1]
+PUSHW[] 34
+IP[]
+PUSHW[] 34
+MDAP[1]
+IUP[0]
+IUP[1]
+</string>
+        <key>formatVersion</key>
+        <string>1</string>
+        <key>id</key>
+        <string>9dca79b21f02f29ee4cacf0c6abf7371a6e51b6a0671bddf443d76e468dba17c3cdd9cc60c3cbcb682ee59b26da9e6505310d516e7104c115ac7ab1d37d1d209</string>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

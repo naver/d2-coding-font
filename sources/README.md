@@ -20,8 +20,9 @@ with [fontTools](https://github.com/fonttools/fonttools) and
 The ligature builds were used as the input because they are a strict superset of the standard
 builds: their `glyf`, `loca`, `hmtx` and `cmap` tables are byte-identical to the corresponding
 standard builds, and they additionally carry the `GSUB` code for the coding ligatures. So the
-standard build is the same source without the `calt` and `aalt` features, which is why both builds
-can be generated from this one set of sources.
+standard build is the same source without the `aalt`, `calt` and `liga` features, which is why both
+builds can be generated from this one set of sources. Since 1.4.0 the standard build keeps the
+`cv01` and `ss01` features for the dotted zero, the glyph `zero.dotted`.
 
 ## What to expect
 

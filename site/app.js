@@ -158,6 +158,7 @@
     tracking: $("#ctl-tracking"),
     bold: $("#ctl-bold"),
     calt: $("#ctl-calt"),
+    zero: $("#ctl-zero"),
     grid: $("#ctl-grid"),
     antialias: $("#ctl-antialias")
   };
@@ -169,6 +170,7 @@
       tracking: Number(ctl.tracking.value),
       weight: ctl.bold.checked ? 700 : 400,
       calt: ctl.calt.checked,
+      zero: ctl.zero.checked,
       grid: ctl.grid.checked,
       antialias: ctl.antialias.checked
     };
@@ -181,7 +183,8 @@
     root.style.setProperty("--type-tracking", s.tracking + "em");
     root.style.setProperty("--type-weight", String(s.weight));
     root.style.setProperty("--type-liga", s.calt ? "contextual" : "none");
-    root.style.setProperty("--type-features", s.calt ? '"calt" 1, "liga" 1' : '"calt" 0, "liga" 0');
+    root.style.setProperty("--type-features",
+      (s.calt ? '"calt" 1, "liga" 1' : '"calt" 0, "liga" 0') + (s.zero ? ', "cv01" 1' : ""));
     root.style.setProperty("--type-smoothing", s.antialias ? "antialiased" : "auto");
     root.style.setProperty("--cell", (s.size * 0.5 + s.size * s.tracking) + "px");
     document.body.classList.toggle("is-grid", s.grid);
@@ -365,6 +368,7 @@
       "| Font | D2Coding 1.3.5 (ligature build, WOFF2) |",
       "| Build shown | " + (s.calt ? "ligature (`calt` and `liga` on)" : "standard (`calt` and `liga` off)") + " |",
       "| Weight | " + (s.weight === 700 ? "Bold (700)" : "Regular (400)") + " |",
+      "| Zero | " + (s.zero ? "dotted (`cv01` on)" : "slashed (default)") + " |",
       "| Size | " + s.size + "px |",
       "| Line height | " + s.leading.toFixed(2) + " |",
       "| Letter spacing | " + s.tracking.toFixed(2) + "em |",

@@ -29385,3 +29385,23 @@ feature liga {
             lookup ChainedContextualGSUB205;
 
 } liga;
+
+lookup DottedZero {
+    sub zero by zero.dotted;
+} DottedZero;
+
+feature cv01 {
+    cvParameters {
+        FeatUILabelNameID {
+            name "Dotted zero";
+        };
+    };
+    lookup DottedZero;
+} cv01;
+
+feature ss01 {
+    featureNames {
+        name "Dotted zero";
+    };
+    lookup DottedZero;
+} ss01;

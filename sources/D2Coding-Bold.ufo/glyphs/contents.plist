@@ -52334,6 +52334,8 @@
     <string>zdotaccent.glif</string>
     <key>zero</key>
     <string>zero.glif</string>
+    <key>zero.dotted</key>
+    <string>zero.dotted.glif</string>
     <key>zeta</key>
     <string>zeta.glif</string>
   </dict>

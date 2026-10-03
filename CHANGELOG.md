@@ -30,6 +30,14 @@ dev.naver.com to GitHub, and their dates below come from the archive names.
   follow. No outline changed, and every other size renders as before.
   `tools/check_hinting.py` now checks all baseline glyphs from U+0020 to U+052F at 9 to
   29 ppem.
+- A dotted zero is available as an alternate to the slashed one
+  ([#106](https://github.com/naver/d2-coding-font/issues/106)). It is off by default and
+  is turned on with the `cv01` OpenType feature, also registered as `ss01`; the README
+  lists the settings for common editors and terminals. It keeps the outer outline,
+  advance and vertical hinting of the zero, so it lines up with it at every size. The
+  standard builds now have a `GSUB` table that holds only these two features, so nothing
+  changes unless they are turned on. With the ligatures, the zero is replaced after the
+  ligature lookups, so every ligature still forms.
 
 ## 1.3.5 (2026-10-03)
 
