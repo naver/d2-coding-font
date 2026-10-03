@@ -5,7 +5,7 @@ The archive for every version is attached to its tag on the
 predate this repository; their archives were re-uploaded when the project moved from
 dev.naver.com to GitHub, and their dates below come from the archive names.
 
-## Unreleased
+## 1.4.0 (2026-10-03)
 
 - The ligatures for `.=`, `.-`, `{.` and `.}` are removed
   ([#97](https://github.com/naver/d2-coding-font/issues/97)). They raised the period to
