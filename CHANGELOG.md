@@ -5,6 +5,19 @@ The archive for every version is attached to its tag on the
 predate this repository; their archives were re-uploaded when the project moved from
 dev.naver.com to GitHub, and their dates below come from the archive names.
 
+## Unreleased
+
+- With FreeType hinting, 12 Hangul syllables and a few other glyphs were drawn one pixel
+  above the baseline at some sizes between 14 and 29 ppem
+  ([#116](https://github.com/naver/d2-coding-font/issues/116),
+  [#117](https://github.com/naver/d2-coding-font/pull/117)). In Bold these are 쯔 초 츠
+  쿄 크 토 트 포 프 호 흐 at some sizes from 17 to 29 ppem, `Ʋ` at 27 to 29 ppem and `ð`
+  at 29 ppem. In Regular they are 표 at 20 ppem and `!`, `?` and `‼` at 14 ppem. Their
+  hinting now has a -1 px correction at those sizes, and `‼` follows `!`. No outline
+  changed, and every other size renders as before. `tools/check_hinting.py` now checks
+  every mapped glyph whose outline bottom is between -25 and 20 units, Hangul syllables
+  included, except the private use area and the Hangul compatibility jamo.
+
 ## 1.4.0 (2026-10-03)
 
 - The ligatures for `.=`, `.-`, `{.` and `.}` are removed
