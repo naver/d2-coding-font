@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uni02D0" format="2">
-  <advance width="1000"/>
+  <advance width="500"/>
   <unicode hex="02D0"/>
   <outline>
     <contour>
-      <point x="502" y="395" type="line"/>
-      <point x="386" y="595" type="line"/>
-      <point x="614" y="595" type="line"/>
+      <point x="252" y="395" type="line"/>
+      <point x="136" y="595" type="line"/>
+      <point x="364" y="595" type="line"/>
     </contour>
     <contour>
-      <point x="386" y="104" type="line"/>
-      <point x="502" y="304" type="line"/>
-      <point x="614" y="104" type="line"/>
+      <point x="136" y="104" type="line"/>
+      <point x="252" y="304" type="line"/>
+      <point x="364" y="104" type="line"/>
     </contour>
   </outline>
   <lib>
@@ -25,7 +25,7 @@
         <key>formatVersion</key>
         <string>1</string>
         <key>id</key>
-        <string>w1000l502+395l386+595l614+595|l386+104l502+304l614+104|</string>
+        <string>w500l252+395l136+595l364+595|l136+104l252+304l364+104|</string>
       </dict>
     </dict>
   </lib>

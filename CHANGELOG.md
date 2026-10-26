@@ -17,6 +17,12 @@ dev.naver.com to GitHub, and their dates below come from the archive names.
   changed, and every other size renders as before. `tools/check_hinting.py` now checks
   every mapped glyph whose outline bottom is between -25 and 20 units, Hangul syllables
   included, except the private use area and the Hangul compatibility jamo.
+- The IPA length mark `ː` (U+02D0) was drawn at full width, though it is written between
+  Latin letters and Unicode classes it as East Asian Ambiguous, so terminals give it one
+  column ([#118](https://github.com/naver/d2-coding-font/issues/118)). It now has the
+  width of a Latin letter, with the drawing unchanged in size and centered in the
+  narrower cell. The enclosed alphanumerics such as `①`, `⑴` and `ⓐ`, also Ambiguous,
+  keep their full width.
 
 ## 1.4.0 (2026-10-03)
 
