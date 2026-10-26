@@ -4,9 +4,11 @@
 Usage:
     uv run --with freetype-py python tools/check_hinting.py fonts/ttf/*.ttf
 
-Renders every glyph from U+0020 to U+052F whose outline bottom is between 0 and 40 units
-at 9 to 29 ppem, and fails if a bitmap ends above the baseline. Above 29 ppem the serif
-bottoms at 16 units round to one pixel even in plain Latin, so those sizes are not checked.
+Renders every glyph whose outline bottom is between -25 and 20 units at 9 to 29 ppem, and
+fails if a bitmap ends above the baseline. The private use area and the Hangul compatibility
+jamo, whose bottoms sit above or below the baseline by design, are skipped. Above 29 ppem
+the serif bottoms at 16 units round to one pixel even in plain Latin, so those sizes are not
+checked.
 `--specimen out.png` on a single font draws i, U+0456 and U+045D at 16 to 20 ppem; it also
 needs Pillow 10.1 or later.
 """
@@ -21,7 +23,9 @@ import freetype
 
 PPEMS = tuple(range(16, 21))
 BASELINE_PPEMS = tuple(range(9, 30))
-BASELINE_RANGE = range(0x0020, 0x0530)
+# The private use area and the Hangul compatibility jamo.
+BASELINE_SKIP_RANGES = (range(0xE000, 0xF900), range(0x3130, 0x3190))
+BASELINE_YMIN = range(-25, 21)
 # Punctuation and symbols that may sit above the baseline by design.
 BASELINE_SKIP = {0x0023, 0x0025, 0x002E, 0x003A, 0x00A4, 0x00B1}
 GLYPHS = (
@@ -80,10 +84,12 @@ def floating(path: Path) -> dict[int, tuple[int, ...]]:
     face = freetype.Face(str(path))
     result = {}
     for codepoint, index in face.get_chars():
-        if codepoint not in BASELINE_RANGE or codepoint in BASELINE_SKIP:
+        if codepoint < 0x20 or codepoint in BASELINE_SKIP:
+            continue
+        if any(codepoint in skipped for skipped in BASELINE_SKIP_RANGES):
             continue
         face.load_glyph(index, freetype.FT_LOAD_NO_SCALE)
-        if face.glyph.outline.n_points == 0 or not 0 <= face.glyph.outline.get_bbox().yMin <= 40:
+        if face.glyph.outline.n_points == 0 or face.glyph.outline.get_bbox().yMin not in BASELINE_YMIN:
             continue
         sizes = []
         for ppem in BASELINE_PPEMS:
